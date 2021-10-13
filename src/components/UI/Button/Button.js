@@ -1,13 +1,43 @@
-import React from 'react';
+// import styled from "styled-components";
+import React from "react";
+//css modules
+import styles from "./Button.module.css";
 
-import './Button.css';
-
-const Button = props => {
+const Button = (props) => {
+  //this scopes the css to be added to cerrain components only
+  //by adding a unique hash
   return (
-    <button type={props.type} className="button" onClick={props.onClick}>
+    <button type={props.type} className={styles.button} onClick={props.onClick}>
       {props.children}
     </button>
   );
 };
+
+// const Button = styled.button`
+//   width: 100%;
+//   font: inherit;
+//   padding: 0.5rem 1.5rem;
+//   border: 1px solid #8b005d;
+//   color: white;
+//   background: #8b005d;
+//   box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+//   cursor: pointer;
+
+//   @media (min-width: 768px) {
+//     width: auto;
+//   }
+//   &:focus {
+//     outline: none;
+//   }
+
+//   &:hover,
+//   &:active {
+//     background: #ac0e77;
+//     border-color: #ac0e77;
+//     box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
+//   }
+// `;
+
+//this is like calling a method and is independent of react or any framework but is a js default
 
 export default Button;
